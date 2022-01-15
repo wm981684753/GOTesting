@@ -10,6 +10,9 @@ import (
 var wg sync.WaitGroup
 
 func init() {
+	//设置执行进程的cpu数量 runtime.NumCPU()查询电脑核心数
+	//1.5之前默认单核，1.5之后默认runtime.NumCPU()
+	//详细资料 http://c.biancheng.net/view/94.html
 	runtime.GOMAXPROCS(runtime.NumCPU())
 }
 

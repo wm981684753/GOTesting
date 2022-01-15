@@ -10,6 +10,7 @@ func main() {
 
 	fmt.Println(n)
 	sort.Sort(sort.IntSlice(n))
+	//sort.Ints(n)
 	fmt.Println(n)
 
 }

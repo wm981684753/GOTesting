@@ -8,6 +8,9 @@ func main() {
 	var meters float64
 	fmt.Print("Enter meters swam: ")
 	fmt.Scan(&meters)
-	yards := meters * metersToYards
+	var meters2 float64
+	fmt.Print("Enter meters2 swam: ")
+	fmt.Scan(&meters2)
+	yards := meters * meters2 * metersToYards
 	fmt.Println(meters, " meters is ", yards, " yards.")
 }

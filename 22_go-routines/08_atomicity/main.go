@@ -10,6 +10,7 @@ import (
 
 var wg sync.WaitGroup
 var counter int64
+var counter2 int64
 
 func main() {
 	wg.Add(2)
@@ -23,7 +24,8 @@ func incrementor(s string) {
 	for i := 0; i < 20; i++ {
 		time.Sleep(time.Duration(rand.Intn(3)) * time.Millisecond)
 		atomic.AddInt64(&counter, 1)
-		fmt.Println(s, i, "Counter:", atomic.LoadInt64(&counter)) // access without race
+		counter2++
+		fmt.Println(s, i, "Counter:", atomic.LoadInt64(&counter),counter2) // access without race
 	}
 	wg.Done()
 }

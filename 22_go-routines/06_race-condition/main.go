@@ -25,11 +25,14 @@ func incrementor(s string) {
 		x++
 		time.Sleep(time.Duration(rand.Intn(3)) * time.Millisecond)
 		counter = x
-		fmt.Println(s, i, "Counter:", counter)
+
+		fmt.Println(s,counter)
+		zz := rand.Intn(3)
+		fmt.Println(s, i, "Counter:", zz, counter,zz,time.Duration(zz))
 	}
 	wg.Done()
 }
-
-// go run -race main.go
+// 数据溢出了，两个协程存在竞争，不安全
+// go run -race main.go //-race用于检测数据的安全性，可以检测数据竞争
 // vs
 // go run main.go

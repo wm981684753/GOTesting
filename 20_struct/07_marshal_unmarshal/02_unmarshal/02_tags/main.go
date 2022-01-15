@@ -8,7 +8,7 @@ import (
 type person struct {
 	First string
 	Last  string
-	Age   int `json:"wisdom score"`
+	Age   int `json:"wisdom score"`//对应的json key别名
 }
 
 func main() {

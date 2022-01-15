@@ -8,7 +8,8 @@ import (
 )
 
 func main() {
-	res, err := http.Get("http://www.geekwiseacademy.com/")
+	// res, err := http.Get("http://www.geekwiseacademy.com/")
+	res, err := http.Get("http://www.daweisoft.com/ajax/index")
 	if err != nil {
 		log.Fatal(err)
 	}
