@@ -23,10 +23,10 @@ func incrementor(s string) {
 	for i := 0; i < 20; i++ {
 		time.Sleep(time.Duration(rand.Intn(20)) * time.Millisecond)
 		//互斥锁
-		mutex.Lock()
+		// mutex.Lock()
 		counter++
 		fmt.Println(s, i, "Counter:", counter)
-		mutex.Unlock()
+		// mutex.Unlock()
 	}
 	wg.Done()
 }

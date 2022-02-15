@@ -18,7 +18,7 @@ func main() {
 func foo() {
 	for i := 0; i < 45; i++ {
 		fmt.Println("Foo:", i)
-		time.Sleep(300 * time.Millisecond)//睡眠时间
+		time.Sleep(300 * time.Millisecond) //睡眠时间
 	}
 	wg.Done()
 }

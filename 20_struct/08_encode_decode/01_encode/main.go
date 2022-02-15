@@ -16,7 +16,7 @@ type person struct {
 func main() {
 	p1 := person{"James", "Bond", 20, 007}
 
-	dat :=make(map[string]string,5)
+	dat := make(map[string]string, 5)
 	dat["First"] = "James"
 	dat["Last"] = "Bond"
 
@@ -24,12 +24,12 @@ func main() {
 	json.NewEncoder(os.Stdout).Encode(p1)
 	json.NewEncoder(os.Stdout).Encode(dat)
 
-	p1j,_ := json.Marshal(p1)
-	fmt.Println("struct转json:",string(p1j))
-	mj,_:= json.Marshal(dat)
-	fmt.Println("map转json:",string(mj))
+	p1j, _ := json.Marshal(p1)
+	fmt.Println("struct转json:", string(p1j))
+	mj, _ := json.Marshal(dat)
+	fmt.Println("map转json:", string(mj))
 
-	dat2 :=make(map[string]string,5)
-	json.Unmarshal(mj,&dat2)
-	fmt.Println("json转map",dat2)
+	dat2 := make(map[string]string, 5)
+	json.Unmarshal(mj, &dat2)
+	fmt.Println("json转map", dat2)
 }

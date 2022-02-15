@@ -27,7 +27,8 @@ type boat struct {
 }
 
 func main() {
-	prius := car{}
+	vehicle1 := vehicle{1, 2, "aaa"}
+	prius := car{vehicle1, 4, 5}
 	tacoma := car{}
 	bmw528 := car{}
 	boeing747 := plane{}

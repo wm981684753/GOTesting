@@ -5,6 +5,8 @@ import "fmt"
 func main() {
 	c := incrementor()
 	cSum := puller(c)
+	// 给chan规定了方向，无法接收数据
+	// cSum <- 5
 	for n := range cSum {
 		fmt.Println(n)
 	}

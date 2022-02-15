@@ -5,6 +5,13 @@ import "fmt"
 func main() {
 	c := incrementor()
 	cSum := puller(c)
+
+	// chan为双向通道，此处还可以写入数据
+	go func() {
+		fmt.Println("a")
+		cSum <- 5
+	}()
+
 	for n := range cSum {
 		fmt.Println(n)
 	}
@@ -29,6 +36,7 @@ func puller(c chan int) chan int {
 			sum += n
 		}
 		out <- sum
+		fmt.Println("a")
 		close(out)
 	}()
 	return out

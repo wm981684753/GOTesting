@@ -25,7 +25,7 @@ func incrementor(s string) {
 		time.Sleep(time.Duration(rand.Intn(3)) * time.Millisecond)
 		atomic.AddInt64(&counter, 1)
 		counter2++
-		fmt.Println(s, i, "Counter:", atomic.LoadInt64(&counter),counter2) // access without race
+		fmt.Println(s, i, "Counter:", atomic.LoadInt64(&counter), counter2) // access without race
 	}
 	wg.Done()
 }
